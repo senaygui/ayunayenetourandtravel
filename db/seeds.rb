@@ -14,5 +14,5 @@ if Rails.env.production?
   AdminUser.create!(full_name: Rails.application.credentials.production[:full_name].to_s, email: Rails.application.credentials.production[:admin_email].to_s,
                     password: Rails.application.credentials.production[:seed_password].to_s, password_confirmation: Rails.application.credentials.production[:seed_password].to_s)
 
-  CompanyInformation.create!(campany_name: "Nebidom tour and travel")
+  CompanyInformation.create!(company_name: "Ayunayene tour and travel")
 end
