@@ -1,256 +1,341 @@
 <%provide :title, "Home"%>
 
 
-<div class="hero-wrap js-fullheight" style="background-image: url('<%= asset_path("Lalibela2.jpg")%>');">
-	<div class="overlay"></div>
-	<div class="container">
-		<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
-			<div class="col-md-9 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-				<h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Explore Amazing <br></strong>Destinations With Us </h1>
-				<p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Find great places to stay, eat, shop, or visit from local experts</p>
-				<%= link_to 'Explore More', "#about", class: "btn btn-lg btn-primary mt-5 py-3 px-5" %>
-			</div>
-		</div>
-	</div>
-</div>
-<section class="ftco-section" id="about">
-	<div class="container">
-		<div class="row d-md-flex">
-			<div class="col-md-6 ftco-animate img about-image" style="background-image: url('<%= asset_path("Lalibela2.jpg")%>');">
-			</div>
-			<div class="col-md-6 ftco-animate p-md-5">
-				<div class="row">
-					<div class="col-md-12 nav-link-wrap mb-5">
-						<div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-							<a class="nav-link active" id="v-pills-whatwedo-tab" data-toggle="pill" href="#v-pills-whatwedo" role="tab" aria-controls="v-pills-whatwedo" aria-selected="true">About us</a>
-							<a class="nav-link" id="v-pills-mission-tab" data-toggle="pill" href="#v-pills-mission" role="tab" aria-controls="v-pills-mission" aria-selected="false">Our mission</a>
-							<a class="nav-link" id="v-pills-goal-tab" data-toggle="pill" href="#v-pills-goal" role="tab" aria-controls="v-pills-goal" aria-selected="false">Our Vision</a>
-						</div>
-					</div>
-					<div class="col-md-12 d-flex align-items-center">
-						<div class="tab-content ftco-animate" id="v-pills-tabContent">
-							<div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
-								<div>
-									<h2 class="mb-4">About Us</h2>
-									<p><%= @company_information.about_us%></p>
-								</div>
-							</div>
-							<div class="tab-pane fade" id="v-pills-mission" role="tabpanel" aria-labelledby="v-pills-mission-tab">
-								<div>
-									<h2 class="mb-4">Our Mission</h2>
-									<p><%= @company_information.mission%></p>
-								</div>
-							</div>
-							<div class="tab-pane fade" id="v-pills-goal" role="tabpanel" aria-labelledby="v-pills-goal-tab">
-								<div>
-									<h2 class="mb-4">Our Vision</h2>
-									<p><%= @company_information.vision%></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="ftco-section services-section bg-light">
-	<div class="container">
-		<div class="row d-flex">
-			<div class="col-md-12 mb-4">
-				<span class="subheading">Services</span>
-				<h2 class="mb-2 pb-3"><strong>Our</strong> Services</h2>
-			</div>
-			<% @services.each do |service|%>
-				<div class="col-md-3 d-flex align-self-stretch ftco-animate">
-					<div class="media block-6 services d-block text-center">
-						<!-- <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-service"></span></div></div> -->
-						<div class="media-body mt-2">
-							<h3 class="heading mb-3"><%= service.service_name%></h3>
-							<p><%= service.service_description%></p>
-						</div>
-					</div>
-				</div>
-			<%end%>
-		</div>
-	</div>
-</section>
-<section class="ftco-section ftco-destination" id="destination">
-	<div class="container">
-		<div class="row justify-content-start mb-5 pb-3">
-			<div class="col-md-7 heading-section ftco-animate">
-				<span class="subheading">Featured</span>
-				<h2 class="mb-4"><strong>Featured</strong> Destination</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12 col-md-12">
-				<div class="destination-slider owl-carousel ftco-animate">
-					<% @destinations.each do |destination|%>
-						<div class="item">
-							<div class="destination">
-								<%= link_to destination_path(destination), class: "img d-flex justify-content-center align-items-center", style:"background-image: url(#{rails_blob_url(destination.medias[0])});" do%>
-									<div class="icon d-flex justify-content-center align-items-center">
-										<span class="icon-search2"></span>
-									</div>
+		
+		<!--about-us start -->
+		<section id="home" class="about-us" style="background-image: url('<%= asset_path("home.jpg")%>');">
+			<div class="container">
+				<div class="about-us-content">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="single-about-us">
+								<div class="about-us-txt">
+									<h2>
+										Explore the Beauty of the Beautiful Ethiopia 
 
-								<%end%>
-								<div class="text p-3">
-									<h3><a><%= link_to destination.destination_name, destination_path(destination)%>, <%= destination.country%></a></h3>
-									<span class="listing"><%= destination.tours.count%> Listing</span>
-								</div>
-							</div>
-						</div>
+									</h2>
+									<div class="about-btn">
+										<button  src="#about" class="about-view">
+											explore now
+										</button>
+										
+									</div><!--/.about-btn-->
+								</div><!--/.about-us-txt-->
+							</div><!--/.single-about-us-->
+						</div><!--/.col-->
+						<div class="col-sm-0">
+							<div class="single-about-us">
+								
+							</div><!--/.single-about-us-->
+						</div><!--/.col-->
+					</div><!--/.row-->
+				</div><!--/.about-us-content-->
+			</div><!--/.container-->
+
+		</section><!--/.about-us-->
+		<!--about-us end -->
+<section class="single-service-box" id="about">
+	<div class="container gallary-header">
+		<div class="row gallery-details">
+			<div class="col-md-12 ftco-animate p-md-5">
+				<div class="row">
+					<div class="col-sm-12 col-md-4 service-content">
+						<h2 class="mb-4">About Us</h2>
+						<p><%= @company_information.about_us%></p>
+					</div>
+					<div class="col-sm-12 col-md-4 service-content">
+						<h2 class="mb-4">Our Mission</h2>
+						<p><%= @company_information.mission%></p>
+					</div>
+					<div class="col-sm-12 col-md-4 service-content">
+						<h2 class="mb-4">Our Vision</h2>
+						<p><%= @company_information.vision%></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+        <!--service start-->
+		<section id="service" class="service" style="padding-top: 0px;">
+			<div class="container">
+				<div class="gallary-header text-center" style="margin-top: 0px;">
+						<h2>
+							Our Services
+						</h2>
+						<p>
+							Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  
+						</p>
+				</div><!--/.gallery-header-->
+				<div class="service-counter text-center" style="margin-top: 40px;">
+					<% @services.each do |service|%>
+						<div class="col-md-4 col-sm-4">
+							<div class="single-service-box">
+								<div class="service-img">
+								</div><!--/.service-img-->
+								<div class="service-content">
+									<h2>
+										<a href="#">
+										<%= service.service_name%>
+										</a>
+									</h2>
+									<p><%= service.service_description%>.</p>
+								</div><!--/.service-content-->
+							</div><!--/.single-service-box-->
+						</div><!--/.col-->
 					<%end%>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="ftco-section bg-light" id="tour">
-	<div class="container">
-		<div class="row justify-content-start mb-5 pb-3">
-			<div class="col-md-7 heading-section ftco-animate">
-				<span class="subheading">Premium Tours</span>
-				<h2 class="mb-4"><strong>Top</strong> Tours</h2>
-			</div>
-		</div>
-	</div>
-	<div class="container-fluid">
-		<div class="row">
-			<% @tours.each do |tour|%>
-				<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate">
-					<div class="destination">
-						<%= link_to tour_path(tour), class: "img img-2 d-flex justify-content-center align-items-center", style: "background-image: url(#{rails_blob_url(tour.medias[0])});" do%>
+
+				</div><!--/.statistics-counter-->	
+			</div><!--/.container-->
+
+		</section><!--/.service-->
+		<!--service end-->
+
+		<!--galley start-->
+		<section id="gallery" class="gallery">
+			<div class="container">
+				<div class="gallery-details">
+					<div class="gallary-header text-center">
+						<h2>
+							top destination
+						</h2>
+						<p>
+							Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  
+						</p>
+					</div><!--/.gallery-header-->
+					<div class="gallery-box">
+						<div class="gallery-content">
+						  	<div class="filtr-container">
+						  		<div class="row">
+						  			<% @destinations.each do |destination|%>
+							  			<div class="col-md-6">
+							  				<div class="filtr-item">
+													<%= image_tag(url_for(destination.medias[0]), alt: "portfolio image")%>
+													<div class="item-title">
+														<a><%= link_to destination.destination_name, destination_path(destination)%>, <%= destination.country%></a>
+														<p><span><%= destination.tours.count%> tours listing</span></p>
+													</div><!-- /.item-title -->
+												</div><!-- /.filtr-item -->
+							  			</div><!-- /.col -->
+						  			<%end%>
+						  		</div><!-- /.row -->
+
+						  	</div><!-- /.filtr-container-->
+						</div><!-- /.gallery-content -->
+					</div><!--/.galley-box-->
+				</div><!--/.gallery-details-->
+			</div><!--/.container-->
+
+		</section><!--/.gallery-->
+		<!--gallery end-->
+
+		<!--packages start-->
+		<section id="pack" class="packages">
+			<div class="container">
+				<div class="gallary-header text-center">
+					<h2>
+						Our tour packages
+					</h2>
+					<p>
+						Our premium tour packages and offerings.  
+					</p>
+				</div><!--/.gallery-header-->
+				<div class="packages-content">
+					<div class="row">
+						<% @tours.each do |tour|%>
+							<div class="col-md-4 col-sm-6">
+								<div class="single-package-item">
+									<%= image_tag(url_for(tour.medias[0]), alt: "portfolio image")%>
+									<div class="single-package-item-txt">
+										<h3><%= tour.destination.country%> <span class="pull-right"><%= tour.tour_price_range%></span></h3>
+										<div class="packages-para">
+											<p>
+												<span>
+													<strong class="text-black"><%= tour.tour_title%></strong>
+												</span>
+											</p>
+											<p>
+												<span>
+													<i class="fas fa-angle-right"></i> <%= tour.tour_duration%>
+												</span>
+											</p>
+											<p>
+												<span>
+													<i class="fas fa-angle-right"></i>  <%= tour.destination.city%>, <%= tour.destination.country%>
+												</span>
+												<i class="fas fa-angle-right"></i>  food facilities
+											 </p>
+										</div><!--/.packages-para-->
+										<div class="packages-review">
+											<p>
+												<%= tour.desciption%>
+											</p>
+										</div><!--/.packages-review-->
+										<div class="about-btn">
+											<!-- <button  class="about-view packages-btn">
+												book now
+											</button> -->
+										</div><!--/.about-btn-->
+									</div><!--/.single-package-item-txt-->
+								</div><!--/.single-package-item-->
+
+							</div><!--/.col-->
 						<%end%>
-						<div class="text p-3">
-							<div class="d-flex">
-								<div class="one">
-									<h3><%= link_to tour.tour_title, tour_path(tour)%></h3>
-									<p class="rate">
-										<i class="icon-star"></i>
-										<i class="icon-star"></i>
-										<i class="icon-star"></i>
-										<i class="icon-star"></i>
-										<i class="icon-star-o"></i>
-										<span>4 Rating</span>
+					</div><!--/.row-->
+				</div><!--/.packages-content-->
+			</div><!--/.container-->
+
+		</section><!--/.packages-->
+		<!--packages end-->
+
+		<!-- testemonial Start -->
+		<section   class="testemonial">
+			<div class="container">
+
+				<div class="gallary-header text-center">
+					<h2>
+						clients reviews
+					</h2>
+					<p>
+						<strong>Our</strong> Guests Says
+					</p>
+
+				</div><!--/.gallery-header-->
+
+				<div class="owl-carousel owl-theme" id="testemonial-carousel">
+					<%@testimonials.each do |t|%>
+						<div class="home1-testm item">
+							<div class="home1-testm-single text-center">
+								<div class="home1-testm-img">
+									<%= image_tag("Profile.png")%>
+								</div><!--/.home1-testm-img-->
+								<div class="home1-testm-txt">
+									<span class="icon section-icon">
+										<i class="fa fa-quote-left" aria-hidden="true"></i>
+									</span>
+									<p>
+										<%= t.message%>
 									</p>
-								</div>
-								<!-- <div class="two">
-									<span class="price">$200</span>
-								</div> -->
-							</div>
-							<p class="font-weight-bold"><span><i class="icon-map-o"></i> <%= tour.destination.city%>, <%= tour.destination.country%></span></p>
-							<p><%= tour.desciption%></p>
-							<p class="days"><span><%= tour.tour_duration%></span></p>
-							<hr>
-							<p class="bottom-area d-flex">
-								<span  class="font-weight-bold"><%= tour.tour_price_range%></span>
-								<span class="ml-auto"><%= link_to "Book Now", tour_path(tour), class: "btn"%></span>
+									<h3>
+										<a href="#">
+											<%= t.full_name%>
+										</a>
+									</h3>
+									<!-- <h4>london, england</h4> -->
+								</div><!--/.home1-testm-txt-->	
+							</div><!--/.home1-testm-single-->
+
+						</div><!--/.item-->
+					<%end%>
+				</div><!--/.testemonial-carousel-->
+			</div><!--/.container-->
+
+		</section><!--/.testimonial-->	
+		<!-- testemonial End -->
+
+		<!--blog start-->
+		<section id="blog" class="blog">
+			<div class="container">
+				<div class="blog-details">
+						<div class="gallary-header text-center">
+							<h2>
+								latest news
+							</h2>
+							<p>
+								Travel News from all over the world 
 							</p>
-						</div>
-					</div>
+						</div><!--/.gallery-header-->
+						<div class="blog-content">
+							<div class="row">
+								<% @posts.each do |post|%>
+									<div class="col-sm-4 col-md-4">
+										<div class="thumbnail">
+											<h2>trending news <span><%= post.created_at.strftime("%b %d, %Y")%></span></h2>
+											<div class="thumbnail-img">
+												<%= image_tag(post.medias[0])%>
+												<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
+											
+											</div><!--/.thumbnail-img-->
+										  
+											<div class="caption">
+												<div class="blog-txt">
+													<h3>
+														<%= link_to post.post_title, post_path(post)%>
+													</h3>
+													<p>
+														<%= truncate post.body, length: 400%> 
+													</p>
+													
+												</div><!--/.blog-txt-->
+											</div><!--/.caption-->
+										</div><!--/.thumbnail-->
+
+									</div><!--/.col-->
+								<%end%>
+							</div><!--/.row-->
+						</div><!--/.blog-content-->
+					</div><!--/.blog-details-->
+				</div><!--/.container-->
+
+		</section><!--/.blog-->
+		<!--blog end-->
+
+		
+		<!--subscribe start-->
+		<section id="subs" class="subscribe">
+			<div class="container">
+				<div class="subscribe-title text-center">
+					<h2>
+						Join our Subscribers List to Get Regular Update
+					</h2>
+					<p>
+						Subscribe Now. We will send you Best offer for your Trip 
+					</p>
 				</div>
-			<%end%>
-		</div>
-	</div>
-</section>
-<section class="ftco-section testimony-section section-img2" >
-	<div class="container">
-		<div class="row justify-content-start">
-			<div class="col-md-5 heading-section ftco-animate text-white">
-				<span class="subheading">Best Customer Service</span>
-				<h2 class="mb-4 pb-3 text-white" ><strong>Why</strong> Choose Us?</h2>
-				<p><%= @company_information.why_choose_us%></p>
-				<p><%= link_to "Read more", about_path, class: "btn btn-primary btn-outline-primary mt-4 px-4 py-3"%></p>
-			</div>
-			<div class="col-md-1"></div>
-			<div class="col-md-6 heading-section ftco-animate">
-				<span class="subheading text-white">Testimony</span>
-				<h2 class="mb-4 pb-3 text-white"><strong>Our</strong> Guests Says</h2>
-				<div class="row ftco-animate">
-					<div class="col-md-12">
-						<div class="carousel-testimony owl-carousel">
-							<%@testimonials.each do |t|%>
-								<div class="item">
-									<div class="testimony-wrap d-flex">
-										<div class="user-img mb-5" style="background-image: url('<%= asset_path("Profile.png")%>')">
-											<span class="quote d-flex align-items-center justify-content-center">
-												<i class="icon-quote-left"></i>
-											</span>
-										</div>
-										<div class="text ml-md-4">
-											<p class="mb-5"><%= t.message%></p>
-											<p class="name"><%= t.full_name%></p>
-											<!-- <span class="position">Guest from italy</span> -->
-										</div>
-									</div>
-								</div>
-							<%end%>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="ftco-section bg-light" id="blog">
-	<div class="container">
-		<div class="row justify-content-start mb-5 pb-3">
-			<div class="col-md-7 heading-section ftco-animate">
-				<span class="subheading">Recent Blog</span>
-				<h2><strong>News</strong> &amp; Articles</h2>
-			</div>
-		</div>
-		<div class="row d-flex">
-			<% @posts.each do |post|%>
-				<div class="col-md-3 d-flex ftco-animate">
-					<div class="blog-entry align-self-stretch">
-						<%= link_to post_path(post), class: "block-20", style:"background-image: url(#{rails_blob_url(post.medias[0])});" do%>
-						<%end%>
-						<div class="text p-4 d-block">
-							<span class="tag"><%= post.post_type%></span>
-							<h3 class="heading mt-3"><%= link_to post.post_title, post_path(post)%></h3>
-							<div class="meta mb-3">
-								<div><a href="#"><%= post.created_at.strftime("%b %d, %Y")%></a></div>
-								<div><a href="#"><%= post.author_name%></a></div>
-								<div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+				<form>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+							<div class="custom-input-group">
+								<input type="email" class="form-control" placeholder="Enter your Email Here">
+								<button class="appsLand-btn subscribe-btn">Subscribe</button>
+								<div class="clearfix"></div>
+								<i class="fa fa-envelope"></i>
 							</div>
+
 						</div>
 					</div>
-				</div>
-			<%end%>
-		</div>
-	</div>
-</section>
+				</form>
+			</div>
+
+		</section>
+		<!--subscribe end-->
 
 <section class="ftco-section contact-section ftco-degree-bg" id="contact">
 	<div class="container">
 		<div class="row d-flex mb-5 contact-info">
-			<div class="col-md-12 mb-4">
-				<h2 class="h4">Contact Information</h2>
-			</div>
+			<div class="gallary-header text-center" style="margin-bottom: 80px !important; ">
+					<h2>
+						Contact Information
+					</h2>
+					<p>
+						You can reach out to us using the form and the information listed below.  
+					</p>
+				</div><!--/.gallery-header-->
 			<div class="w-100"></div>
 			<div class="col-md-3">
-				<p><span>Address:</span> <%= @company_information.address%></p>
-				<p><span>Address 2:</span> <%= @company_information.alternative_address%></p>
+				<p ><span class="text1">Address: </span> <%= @company_information.address%></p>
+				<p ><span class="text1">Address 2: </span> <%= @company_information.alternative_address%></p>
 				
 				
 			</div>
 			<div class="col-md-3">
-				<p><span>Phone number:</span> <a href="tel://<%= @company_information.phone_number%>"><%= @company_information.phone_number%></p>
-					<p><span>Phone number 2:</span> <a href="tel://<%= @company_information.alternative_phone_number%>"><%= @company_information.alternative_phone_number%></a></p>
+				<p class="text1"><span class="text1">Phone number:</span> <a href="tel://<%= @company_information.phone_number%>"><%= @company_information.phone_number%></a></p>
+				<p ><span class="text1">Phone number 2: </span> <a href="tel://<%= @company_information.alternative_phone_number%>"><%= @company_information.alternative_phone_number%></a></p>
 				</div>
 				<div class="col-md-3">
-					<p><span>Email:</span> <span><%= @company_information.email%></span></p>
+					<p ><span class="text1">Email:</span> <span><%= @company_information.email%></span></p>
 				</div>
-				<div class="col-md-3">
-					<ul class="ftco-footer-social list-unstyled float-md-left float-lft">
-						<li class="ftco-animate"><a href="https://<%= @company_information.youtube_link%>"><span class="icon-youtube"></span></a></li>
-						<li class="ftco-animate"><a href="https://<%= @company_information.facebook_link%>"><span class="icon-facebook"></span></a></li>
-						<li class="ftco-animate"><a href="https://<%= @company_information.instagram_link%>"><span class="icon-instagram"></span></a></li>
-					</ul>
-				</div>
+
 
 			</div>
 			<div class="row block-9">
@@ -289,35 +374,3 @@
 		</div>
 	</section>
 
-	<section class="ftco-section bg-light">
-		<div class="container">
-			<div class="row justify-content-start mb-5 pb-3">
-				<div class="col-md-7 heading-section ftco-animate">
-					<span class="subheading">FAQS</span>
-					<h2 class="mb-4"><strong>Frequently</strong> Ask Question</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 ftco-animate">
-					<div id="accordion">
-						<div class="row">
-							<% @faq.each do |faq|%>
-							<div class="col-md-6">
-								<div class="card">
-									<div class="card-header">
-										<a class="card-link" data-toggle="collapse" href="#menuone" aria-expanded="true" aria-controls="menuone"><%= faq.question%>?<span class="collapsed"><i class="icon-plus-circle"></i></span><span class="expanded"><i class="icon-minus-circle"></i></span></a>
-									</div>
-									<div id="menuone" class="collapse show">
-										<div class="card-body">
-											<p><%= faq.answer%></p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<%end%>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>

@@ -10,39 +10,213 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require open-iconic-bootstrap.min
+ *= require font-awesome.min
  *= require animate
+ *= require hover-min
+ *= require datepicker
  *= require owl.carousel.min
  *= require owl.theme.default.min
- *= require magnific-popup
- *= require aos
- *= require ionicons.min
- *= require bootstrap-datepicker
- *= require jquery.timepicker
- *= require flaticon
- *= require icomoon
+ *= require jquery-ui.min
+ *= require bootstrap.min
+ *= require bootsnav
  *= require style
+ *= require responsive
  *= require_self
  */
 
-.section-img2 {
-      background: #2ebdc4;
+.ftco-section-parallax {
+  position: relative; }
+  .ftco-section-parallax .parallax-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    padding: 10em 0;
+    background: #2ebdc4;
     background: -moz-linear-gradient(-45deg, #2ebdc4 0%, #68e5b2 100%);
     background: -webkit-gradient(left top, right bottom, color-stop(0%, #2ebdc4), color-stop(100%, #68e5b2));
-    background: -webkit-linear-gradient(
--45deg
-, #2ebdc4 0%, #68e5b2 100%);
+    background: -webkit-linear-gradient(-45deg, #2ebdc4 0%, #68e5b2 100%);
     background: -o-linear-gradient(-45deg, #2ebdc4 0%, #68e5b2 100%);
     background: -ms-linear-gradient(-45deg, #2ebdc4 0%, #68e5b2 100%);
-    background: -webkit-linear-gradient(
-315deg
-, #2ebdc4 0%, #68e5b2 100%);
+    background: -webkit-linear-gradient(315deg, #2ebdc4 0%, #68e5b2 100%);
     background: -o-linear-gradient(315deg, #2ebdc4 0%, #68e5b2 100%);
-    background: linear-gradient(
-135deg
-, #2ebdc4 0%, #68e5b2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ebdc4', endColorstr='#68e5b2', GradientType=1 );
+    background: linear-gradient(135deg, #2ebdc4 0%, #68e5b2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ebdc4', endColorstr='#68e5b2', GradientType=1 ); }
+  .ftco-section-parallax .heading-section-white h2 {
+    font-weight: 400 !important; }
+
+
+.ftco-section .ftco-sub-title {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  color: #d4d4d4;
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 300; }
+
+.ftco-section .ftco-primary-title {
+  margin-top: 0;
+  margin-bottom: 30px; }
+
+.ftco-section {
+  padding: 6em 0;
+  position: relative; }
+  @media (max-width: 767.98px) {
+    .ftco-section {
+      padding: 6em 0; } }
+  @media (min-width: 768px) {
+    .ftco-section .container-fluid {
+      padding: 0 4em; } }
+
+
+.bg-light {
+  background-color: #f8f9fa !important; }
+
+.heading-section .subheading {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 10px; }
+
+.heading-section h2 {
+  font-size: 30px;
+  font-weight: 300; }
+  .heading-section h2 strong {
+    font-weight: 700; }
+  @media (max-width: 767.98px) {
+    .heading-section h2 {
+      font-size: 28px; } }
+
+.heading-section.heading-section-white .subheading {
+  color: rgba(255, 255, 255, 0.9); }
+
+.heading-section.heading-section-white h2 {
+  font-size: 40px;
+  color: #fff; }
+
+.heading-section.heading-section-white p {
+  color: rgba(255, 255, 255, 0.9); }
+
+.block-3 .text .subheading {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .1em; }
+
+.block-5 .text .heading, .block-5 .text .subheading, .block-5 .text .post-meta, .block-5 .text .excerpt, .block-5 .text .price {
+      z-index: 2;
+      position: relative; }
+.block-5 .text .subheading {
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: 12px;
+      margin-bottom: 5px;
+      opacity: .6; }
+
+  .block-5:hover .text .heading, .block-5:hover .text .subheading, .block-5:hover .text .post-meta, .block-5:hover .text .price, .block-5:hover .text .star-rate, .block-5:focus .text .heading, .block-5:focus .text .subheading, .block-5:focus .text .post-meta, .block-5:focus .text .price, .block-5:focus .text .star-rate {
+    color: #000000; }
+.heading-section .subheading {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 10px; }
+.heading-section.heading-section-white .subheading {
+  color: rgba(255, 255, 255, 0.9); }
+  .block-3 .text .subheading {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .1em; }
+
+.destination {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px; }
+  @media (max-width: 991.98px) {
+    .destination {
+      margin-bottom: 30px; } }
+  .destination .img {
+    display: block;
+    height: 300px; }
+  .destination .img-2 {
+    height: 200px; }
+  .destination .icon {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    opacity: 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .destination .icon span {
+      color: #000000; }
+  .destination:hover .icon {
+    opacity: 1; }
+  .destination .text {
+    border: 1px solid #e6e6e6;
+    border-top: 1px solid transparent;
+    background: #fff; }
+    .destination .text h3 {
+      font-size: 18px; }
+      .destination .text h3 a {
+        color: #000000; }
+    .destination .text span.listing {
+      font-size: 14px; }
+    .destination .text .rate i {
+      font-size: 10px;
+      color: #f85959; }
+    .destination .text .rate span {
+      padding-left: 5px;
+      font-size: 10px; }
+    .destination .text .one {
+      width: calc(100% - 70px); }
+    .destination .text .two {
+      width: 70px;
+      text-align: right; }
+      .destination .text .two .price {
+        font-weight: 400;
+        font-size: 18px;
+        color: #2f89fc; }
+      .destination .text .two .per-price {
+        font-size: 20px;
+        line-height: 1.4; }
+        .destination .text .two .per-price small {
+          font-size: 12px; }
+    .destination .text .days span {
+      font-size: 13px;
+      color: black; }
+    .destination .text .bottom-area {
+      margin-bottom: 0; }
+      .destination .text .bottom-area span {
+        font-size: 14px; }
+        @media (min-width: 768px) {
+          .destination .text .bottom-area span:last-child {
+            margin-left: 5px; } }
+        .destination .text .bottom-area span:last-child a {
+          background: #8bc34a;
+          color: #fff;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          border-radius: 4px;
+          padding: 3px 5px; }
+          .destination .text .bottom-area span:last-child a:hover {
+            background: #8bc34a;
+            color: #fff; }
+
+
+.text1{
+    font-family: "Poppins", Arial, sans-serif;
+    background: #fff;
+    font-size: 14px;
+    line-height: 1.8;
+    font-weight: 300;
+    color: #4d4d4d;
 }
 
-.logo-wrap{padding:60px 65px;background-color:#fff}
-.single-img img{-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);filter:grayscale(100%);-webkit-transition:all .3s ease 0s;-moz-transition:all .3s ease 0s;-o-transition:all .3s ease 0s;transition:all .3s ease 0s}.single-img img:hover{-webkit-filter:grayscale(0%);-moz-filter:grayscale(0%);-ms-filter:grayscale(0%);-o-filter:grayscale(0%);filter:grayscale(0%)}@media(max-width:800px){.single-img img{margin-bottom:40px}}
+.fab{
+    size: 20px;
+}

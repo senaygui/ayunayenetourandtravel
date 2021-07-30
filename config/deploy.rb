@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
-set :application, "nebidomtourandtravel"
-set :repo_url, "https://github.com/senaygui/nebidomtourandtravel.git"
+set :application, "ayunayenetourandtravel"
+set :repo_url, "https://github.com/senaygui/ayunayenetourandtravel.git"
 # set :ssh_options, { :forward_agent => true, :port => 4321 }
 set :user, "deploy"
 set :passenger_restart_with_touch, true
