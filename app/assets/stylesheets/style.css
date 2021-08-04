@@ -153,7 +153,7 @@ body {
 .logo a,
 .logo a:hover,
 .logo a:focus {
-    color: #fff;
+    color: #e4b800;
     font-size: 24px;
     font-family: 'Poppins', sans-serif;
     text-transform: capitalize;
@@ -163,7 +163,7 @@ body {
 }
 
 .logo a span {
-    color: #00d8ff;
+    color: #000;
     text-transform: capitalize;
 }
 
